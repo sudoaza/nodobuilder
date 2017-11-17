@@ -1,18 +1,13 @@
 
-git
-install
-git
-build-essential 
-iptables-persistent
-cmake
-libboost-iostreams-dev
 autoconf
+build-essential 
 cmake
-git
-libboost-all-dev
-libssl-dev 
-libreadline-dev
 doxygen
-make
+git
+iptables-persistent
+libboost-all-dev
+libboost-iostreams-dev
 libbz2-dev
-
+libreadline-dev
+libssl-dev 
+make
