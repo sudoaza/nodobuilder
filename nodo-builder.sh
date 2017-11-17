@@ -2,10 +2,10 @@
 
 #TODO
 
-if [ "$USER" == "root" ]; then
- echo " [*] NO Lo corras con sudo ni como root  ---gato"
-  exit 0
-fi 
+#if [ "$USER" == "root" ]; then
+# echo " [*] NO Lo corras con sudo ni como root  ---gato"
+#  exit 0
+#fi 
 
 #Variables#########
 NPROC=$(nproc)
@@ -77,7 +77,7 @@ dependencias_debian() {
 
 set -x
 ps axjf
-sudo apt --assume-yes  install  $(tr  '\n' ' ' < config/dependencias-debian)
+apt --assume-yes  install  $(tr  '\n' ' ' < config/dependencias-debian)
 
       cd ~
       git clone https://github.com/cryptonomex/secp256k1-zkp.git
@@ -90,7 +90,7 @@ sudo apt --assume-yes  install  $(tr  '\n' ' ' < config/dependencias-debian)
 
 dependencias_ubuntu() {
 
-sudo apt --assume-yes  install  $(tr  '\n' ' ' < config/dependencias-ubuntu)
+apt --assume-yes  install  $(tr  '\n' ' ' < config/dependencias-ubuntu)
 
       cd ~
       git clone https://github.com/cryptonomex/secp256k1-zkp.git
@@ -212,7 +212,7 @@ if [ $DISTRO = "debian" ]; then
     dependencias_debian
 fi
 #Config inicial
-sudo dpkg-reconfigure locales
+dpkg-reconfigure locales
 #llamada a funciones
 boost
 bitshares_clone
