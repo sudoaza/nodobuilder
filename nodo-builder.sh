@@ -5,7 +5,7 @@
 #if [ "$USER" == "root" ]; then
 # echo " [*] NO Lo corras con sudo ni como root  ---gato"
 #  exit 0
-#fi 
+#fi
 
 #Variables#########
 NPROC=$(nproc)
@@ -18,8 +18,8 @@ BOOST_VERSION=""
 usage () {
 cat << EOF
 NAME
-    
-    bitshares nodo builder 
+
+    bitshares nodo builder
 
 
 SYNOPSIS
@@ -127,11 +127,11 @@ config_final() {
 
 
 bitshares_clone() {
-  read -p "queres compilar bitshare-core? Y/N" -n 1 -r
-  echo ""
+  #read -p "queres compilar bitshare-core? Y/N" -n 1 -r
+  #echo ""
 
-  if [[ $REPLY =~ ^[Yy]$ ]]
-    	then
+  #if [[ $REPLY =~ ^[Yy]$ ]]
+  #  	then
             echo ""
             echo ""
 			printf "\n\n###########################"
@@ -145,12 +145,12 @@ bitshares_clone() {
 			git submodule update --init --recursive
 			cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=RelWithDebInfo .
 			time make -j$NPROC
-        else
-          echo ""
-          echo "chau, hacelo a mano"
-          echo ""
-          exit 0
-      fi
+  #      else
+  #        echo ""
+  #        echo "chau, hacelo a mano"
+  #        echo ""
+  #        exit 0
+  #    fi
 
 
 }
